@@ -6,6 +6,10 @@
 #pragma config(Motor,  motorB,          leftMotor,     tmotorEV3_Large, PIDControl, driveLeft, encoder)
 #pragma config(Motor,  motorC,          rightMotor,    tmotorEV3_Large, PIDControl, driveRight, encoder)
 
+//Programme Description: Using no PID controls implement a range of different functions
+
+
+//Function to get the robot to turn 90 left
 	void turn90degreesLeft()
 {
 
@@ -16,6 +20,8 @@
 
 }
 
+
+//Function to get the robot to turn 90 degrees right
 	void turn90degreesRight()
 {
 
@@ -24,12 +30,16 @@
 		setMotorSpeed(rightMotor, 0);
 		wait1Msec(900);
 }
+
+//Function to get the robot to move forward for 1 second
 	void goForward1second()
 {
 		setMotorSpeed(leftMotor, 50);
 		setMotorSpeed(rightMotor, 50);
 		wait1Msec(1000);
 }
+
+//Function to get the robot to swing 90 degrees to the right
 	void swingRight90degrees()
 	{
 
@@ -38,6 +48,7 @@
 		setMotorSpeed(rightMotor, 0);
 		wait1Msec(900);
 	}
+//Function to get the robot to swing 90 degrees to the left
 	void swingLeft90degrees()
 	{
 		;
@@ -47,7 +58,7 @@
 		setMotorSpeed(rightMotor, 50);
 		wait1Msec(900);
 	}
-
+//Function to get the robot to reverse for 1 seconf
 	void reverse1second()
 	{
 		setMotorSpeed(leftMotor, -100);
@@ -55,6 +66,7 @@
 		wait1Msec(1000);
 	}
 
+//main calling all the functions and getting them to run
 task main()
 {
 	turn90degreesLeft();
