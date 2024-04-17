@@ -16,9 +16,11 @@ void sqrper(long nMotorRatio, long dist, long power);
 
 task main()
 {
-
+	//calling function drive
 	//drive(0, 60, 50);
+	//calling function turn90
 	//turn90(100, 50);
+	//calling function sqrper
 	sqrper(0, 240, 50);
 
 
