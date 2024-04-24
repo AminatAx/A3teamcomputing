@@ -139,7 +139,7 @@ void driveForward(int x, int X, int y, int Y)
 		{
 			drive(20); //calling drive function to drive straight
 			x = x + 1; // increments x by 1
-			displayCenteredTextLine(4, "Current Position [%d,%d]", x, y);
+			displayCenteredTextLine(4, "Position %d,%d", x, y);
 			distance--;
 		}
 		
@@ -148,12 +148,12 @@ void driveForward(int x, int X, int y, int Y)
 		{
 			drive(20); //calling drive function to drive straight
 			x = x - 1; // decrements x by 1
-			displayCenteredTextLine(4, "Current Position [%d,%d]", x, y);
+			displayCenteredTextLine(4, "Position %d,%d", x, y);
 			distance++;
 		}
 	}
 	
-	AngleTurn(y, Y); //calling function to turn 90 degrees
+	AngleTurn(y, Y); //calling function 
 	
 	// loops while the distance is not 0
 	while (dist != 0)
