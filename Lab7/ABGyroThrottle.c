@@ -9,46 +9,28 @@
 
 task main()
 {
-
-	int p;
-  p = 50; // since 50 is the middle, it is set to 0
-//Keep looping forever
+int k;
+//this is set to 0 because 50 is middle
+k = 50; 
+//will loop forever
 while(true)
 {
+  // displays what the angle is
+   displayCenteredTextLine(3, "angle %d", getGyroDegrees(S3));
 
+  //motor speed set based on gyro degrees
+  setMotorSpeed(leftMotor, k+(getGyroDegrees(S3)));
+  setMotorSpeed(rightMotor, k+(getGyroDegrees(S3)));
 
-  // displays what the current angle is
-
-   displayCenteredTextLine(2, "Angle %d", getGyroDegrees(S3));
-
-
-
-  // sets the motor speeds based on what the gyro degrees are
-
-  setMotorSpeed(leftMotor, p+(getGyroDegrees(S3)));
-
-  setMotorSpeed(rightMotor, p+(getGyroDegrees(S3)));
-
-
-
-		//If the gyro sensor is turning to the left,
-		//countersteer the robot to the right
-    if (getGyroDegrees(S3) >= 50)
-
+  //If the gyro sensor is turning left
+  //move the robot to the right
+  if (getGyroDegrees(S3) >= 50)
    {
-
       setMotorSpeed(gyroMotor, -5);
-
     }
-
-
-
     else if (getGyroDegrees(S3) <= -50)
-
     {
-
       setMotorSpeed(gyroMotor, 5);
-
     }
 }
 }
